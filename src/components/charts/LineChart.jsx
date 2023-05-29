@@ -80,28 +80,7 @@ export const options = {
   };
 
   export const linechartOptions = {
-    scales: {
-        yAxes: [
-            {
-              gridLines: {
-                display: true,
-                color: "red",
-                zeroLineColor: "blue"
-              }
-            }
-          ],
-          xAxes: [ {
-            scaleLabel: {
-                  display: true,
-                  fontStyle: "bold",
-                  fontFamily: "Helvetica",
-                  labelString: 'Years'
-              },
-            gridLines: {
-              color: "blue"
-            }
-          }]
-        },
+  
         plugins: {
             legend: {
                 display: false,
@@ -110,12 +89,54 @@ export const options = {
               },
 
         },
-        
+        scales:{
+            x: {
+                border: {
+                  display: true
+                },
+                grid: {
+                  display: false,
+                  drawOnChartArea: true,
+                  color:'red'
+                }
+              },
+              y: {
+                border: {
+                  display: false
+                },
+                // grid: {
+                 
+                //   color:'white'
+                // }
+              },
+
+        },
         responsive: true,
-        maintainAspectRatio: false
+        maintainAspectRatio: false,
+      
+
       }
     
 
+//   const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+
+//   export const data = {
+//     labels,
+//     datasets: [
+//       {
+//         label: 'Dataset 1',
+//         data: [20,40,60,80,100,5],
+//         borderColor: 'rgb(255, 99, 132)',
+//         backgroundColor: 'rgba(255, 99, 132, 0.5)',
+//       },
+//       {
+//         label: 'Dataset 2',
+//         data: [120,140,160,180,100,15],
+//         borderColor: 'rgb(53, 162, 235)',
+//         backgroundColor: 'rgba(53, 162, 235, 0.5)',
+//       },
+//     ],
+//   };
 
 
 

@@ -37,7 +37,7 @@ let lulcChartData = {
       data: [10, 5, 60, 10, 100],
 
       borderColor: '#fff',
-      backgroundColor: 'red'
+      backgroundColor: 'white'
       // barThickness: 40,
    
    
