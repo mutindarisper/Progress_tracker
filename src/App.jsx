@@ -8,9 +8,11 @@ import report from "./assets/report.svg"
 import training from "./assets/training.svg"
 // import viteLogo from '/vite.svg'
 // import './App.css'
+import LineChart from "./components/charts/LineChart"
 
 function App() {
   const [count, setCount] = useState(0)
+  const [barchartData, setBarchartData] = useState({})
 
 
 
@@ -28,6 +30,41 @@ let link_icons = [homepage, dashboard, report, training]
 let task_titles = ['Add banner images', 'Add map functionalities', 'Implement Signup page' ]
 let meter_values = [9, 65, 90]
 
+let lulcChartData = {
+  labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
+  datasets: [
+    {
+      data: [10, 5, 60, 10, 100],
+
+      borderColor: '#fff',
+      backgroundColor: 'red'
+      // barThickness: 40,
+   
+   
+    },
+  ],
+}
+
+const data = {
+  labels: ['Mon', 'tue', 'wed', 'thur', 'fri'],
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: [20,5,50,10,100],
+      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    },
+ 
+  ],
+};
+
+// const getStats = async () => {
+//  return setBarchartData(lulcChartData)
+
+// }
+// getStats()
+
+
   return (
    
 <>
@@ -36,7 +73,7 @@ let meter_values = [9, 65, 90]
       <img className='logo -mx-1 my-10' src={Logo} alt="" />
       <div className="links flex flex-col gap-20	text-white p-12 cursor-pointer">
         {links.map((link) => (
-           <p>{link}</p>
+           <p >{link}</p>
         ))}
       </div>
 
@@ -73,8 +110,9 @@ let meter_values = [9, 65, 90]
 
 
       <div className="your_activity_2 absolute ">
-        <p className="font-sans text-lg text-white font-bold mx-10 my-10 ">Your Activity</p>
+        <p className="font-sans text-lg text-white font-bold mx-10 my-4 ">Your Activity</p>
         <div className="doughnut_chart">
+          <LineChart data={lulcChartData} />
 
         </div>
 
