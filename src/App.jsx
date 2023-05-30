@@ -9,6 +9,7 @@ import training from "./assets/training.svg"
 // import viteLogo from '/vite.svg'
 // import './App.css'
 import LineChart from "./components/charts/LineChart"
+import PieChart from './components/charts/PieChart'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -44,6 +45,32 @@ let lulcChartData = {
     },
   ],
 }
+
+const pieData = {
+  labels: ['Homepage', 'Dashboard', 'Progress Report', 'Training'],
+  datasets: [
+    {
+      label: 'Percent Completed',
+      data: [100, 75, 80, 100],
+      backgroundColor: [
+        '#1c844a',
+        '#0f1854',
+        '#6acb75',
+        '#243492',
+       
+      ],
+      borderColor: [
+        '#fff',
+        '#fff',
+        '#fff',
+        '#fff',
+        '#fff',
+        '#fff',
+      ],
+      borderWidth: 3 ,
+    },
+  ],
+};
 
 const data = {
   labels: ['Mon', 'tue', 'wed', 'thur', 'fri'],
@@ -101,8 +128,9 @@ const data = {
       </div>
 
       <div className="your_activity absolute ">
-        <p className="font-sans text-lg text-blue-900 font-bold mx-10 my-10 ">Your Activity</p>
-        <div className="doughnut_chart">
+        <p className="font-sans text-lg text-blue-900 font-bold mx-10 my-4 ">Your Activity</p>
+        <div className="pie_chart">
+          <PieChart data={pieData} />
 
         </div>
 
@@ -111,6 +139,7 @@ const data = {
 
       <div className="your_activity_2 absolute ">
         <p className="font-sans text-lg text-white font-bold mx-10 my-4 ">Your Activity</p>
+        <p className=" last_week font-sans text-base text-white my-4 ">Last Week</p>
         <div className="doughnut_chart">
           <LineChart data={lulcChartData} />
 

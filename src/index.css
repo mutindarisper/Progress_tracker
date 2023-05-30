@@ -135,7 +135,7 @@ left:76vw;
  
 }
 .divide{
-  border: 1px solid #3CBE74;
+  border: 0.5px solid #3CBE74;
   
 }
 .your_activity{
@@ -215,8 +215,23 @@ border-radius: 20px;
   }
   .doughnut_chart{
     position: absolute;
-    top: 5vh;
+    top: 6vh;
     left: 2vw;
     height: 250px;
     width: 400px;
+  }
+  .last_week{
+    margin-left: 18vw;
+    margin-top: -4vh;
+  }
+  .pie_chart{
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+    /* background:red; */
+    height: 300px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

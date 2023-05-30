@@ -94,6 +94,9 @@ export const options = {
                 border: {
                   display: true
                 },
+                ticks:{
+                  color: "white",
+                },
                 grid: {
                   display: false,
                   drawOnChartArea: true,
@@ -102,12 +105,17 @@ export const options = {
               },
               y: {
                 border: {
-                  display: false
+                  display: true
                 },
-                // grid: {
-                 
-                //   color:'white'
-                // }
+                ticks:{
+                  color: "white",
+                  stepSize: 20,
+                },
+                
+                grid: {
+                  display: false,
+                  // color:'white'
+                }
               },
 
         },
@@ -117,26 +125,6 @@ export const options = {
 
       }
     
-
-//   const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-//   export const data = {
-//     labels,
-//     datasets: [
-//       {
-//         label: 'Dataset 1',
-//         data: [20,40,60,80,100,5],
-//         borderColor: 'rgb(255, 99, 132)',
-//         backgroundColor: 'rgba(255, 99, 132, 0.5)',
-//       },
-//       {
-//         label: 'Dataset 2',
-//         data: [120,140,160,180,100,15],
-//         borderColor: 'rgb(53, 162, 235)',
-//         backgroundColor: 'rgba(53, 162, 235, 0.5)',
-//       },
-//     ],
-//   };
 
 
 
