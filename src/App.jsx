@@ -6,6 +6,7 @@ import dashboard from "./assets/dashboard.svg"
 import homepage from "./assets/homepage.svg"
 import report from "./assets/report.svg"
 import training from "./assets/training.svg"
+import profile from "./assets/risper.png"
 // import viteLogo from '/vite.svg'
 // import './App.css'
 import LineChart from "./components/charts/LineChart"
@@ -36,7 +37,7 @@ let lulcChartData = {
   datasets: [
     {
       data: [10, 5, 60, 10, 100],
-
+      tension: 0.4,
       borderColor: '#fff',
       backgroundColor: 'white'
       // barThickness: 40,
@@ -67,7 +68,7 @@ const pieData = {
         '#fff',
         '#fff',
       ],
-      borderWidth: 3 ,
+      borderWidth: 4 ,
     },
   ],
 };
@@ -149,15 +150,20 @@ const data = {
       <div className="minicharts">
         <div className="homepage_chart ">
           <div className="home_chart_title font-sans text-lg text-white font-semibold my-8 mx-12">HomePage</div>
+          <p className="home_score font-sans text-lg text-white font-bold -my-8 mx-40">98%</p>
+
         </div>
         <div className="dashboard_chart">
         <div className="home_chart_title font-sans text-lg text-white font-semibold my-8 mx-12">Dashboard</div>
+            <p className="home_score font-sans text-lg text-white font-bold -my-8 mx-40">75%</p>
         </div>
         <div className="report_chart">
-        <div className="home_chart_title font-sans text-lg text-white font-semibold my-8 mx-12">Progress Report</div>
+        <div className="home_chart_title font-sans text-lg text-white font-semibold my-8 mx-12">Report</div>
+            <p className="home_score font-sans text-lg text-white font-bold -my-8 mx-40">80%</p>
         </div>
         <div className="training_chart">
         <div className="home_chart_title font-sans text-lg text-white font-semibold my-8 mx-12">Training</div>
+            <p className="home_score font-sans text-lg text-white font-bold -my-8 mx-40">100%</p>
         </div>
 
 
@@ -175,8 +181,8 @@ const data = {
 
       <div className="profile_section bg-green-200">
         <p className='mx-10 my-16 text-2xl font-bold text-blue-900'>My Profile</p>
-        <img className="mx-24 my-16  bg-slate-400" src="" alt="" />
-        <p className='text-xl font-bold text-blue-900 mx-32'>Risper Mutinda</p>
+        <img className=" profile_pic mx-24 my-16  bg-slate-400" src={profile} alt="" />
+        <p className=' name text-xl font-bold text-blue-900 mx-32'>Risper Mutinda</p>
         <div className="level mx-40  text-gray-500 text-base">Intermediate</div>
 
         <div className="tasks">
@@ -203,6 +209,17 @@ const data = {
             <div className='divide'></div>
             <div className='divide'></div>
 
+           </div>
+
+           <div className="todays_progress">
+            <p  className="font-sans text-base text-blue-900 font-bold mx-5 my-10 ">Today's Progress</p>
+            <div className="chart_remarks ">
+            <div className="today_chart">
+              <PieChart data={pieData} /> 
+            </div>
+            <div className="congratulations"> <span className="font-sans text-base text-blue-900 font-semibold"> Congratulations! </span> <br></br>You completed <span className="font-sans text-base text-blue-600 font-bold"> 95% </span> of your tasks</div>
+            </div>
+            
            </div>
 
 

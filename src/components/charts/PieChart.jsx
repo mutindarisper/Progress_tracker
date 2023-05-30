@@ -7,7 +7,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const options = {
     responsive: true,
-   
+    // cutoutPercentage: 50,
 
     plugins: {
       legend: {

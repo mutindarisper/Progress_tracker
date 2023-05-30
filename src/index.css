@@ -129,13 +129,14 @@ left:76vw;
   /* background-color: red; */
   margin-top: -11vw;
   margin-left: 20px;
-  width: 350px;
+  width: 410px;
 
  
  
 }
 .divide{
-  border: 0.5px solid #3CBE74;
+  border: 0.5px solid #6acb75;
+  opacity: 0.5
   
 }
 .your_activity{
@@ -235,3 +236,31 @@ border-radius: 20px;
     justify-content: center;
     align-items: center;
   }
+  .today_chart{
+      
+       height: 150px;
+       width: 150px;
+      /* position: absolute; */
+      margin-top: -7vh;
+      padding: 5px;
+
+  }
+  .chart_remarks{
+    display: flex;
+   
+    flex-direction: row;
+    gap: 1rem;
+  }
+.profile_pic{
+  /* background: #daeee4; */
+  position: relative;
+  border-radius: 50%;
+  padding: 10px;
+  top: -3vh;
+  left:2vw;
+  height: 108px;
+  width: 130px;
+}
+.name{
+  margin-top: -95px;
+}
