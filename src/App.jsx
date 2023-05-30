@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState, useRef  } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './components/HomePage'
 import Logo from './assets/Grouplogo_avant.svg'
 import search from './assets/search.svg'
 import girl from './assets/girl.png'
@@ -11,6 +13,7 @@ import profile from "./assets/risper.png"
 // import './App.css'
 import LineChart from "./components/charts/LineChart"
 import PieChart from './components/charts/PieChart'
+import Landing from './components/Landing'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,6 +34,9 @@ let links = ['Homepage', 'Dashboard', 'Reports', 'Trainings']
 let link_icons = [homepage, dashboard, report, training]
 let task_titles = ['Add banner images', 'Add map functionalities', 'Implement Signup page' ]
 let meter_values = [9, 65, 90]
+
+const [homepage_link, setHomepage_link] = useState(false)
+const [cliked_link, setCliked_link] = useState('')
 
 let lulcChartData = {
   labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
@@ -92,16 +98,23 @@ const data = {
 // }
 // getStats()
 
+const show_homepage_component = () => {
+  setHomepage_link(true)
+
+}
+
 
   return (
    
-<>
+          
+  <>
     <div className="sidenav ">
    
       <img className='logo -mx-1 my-10' src={Logo} alt="" />
       <div className="links flex flex-col gap-20	text-white p-12 cursor-pointer">
         {links.map((link) => (
-           <p >{link}</p>
+          
+           <p  onClick={ () => {  setCliked_link(link) }}>{link}</p>
         ))}
       </div>
 
@@ -112,7 +125,13 @@ const data = {
       <div className="link_icons flex flex-col gap-20 p-12">
         {
           link_icons.map( (icon) => 
-          <img className='icons cursor-pointer' src={icon}></img>)
+        
+          
+          <img className='icons cursor-pointer' src={icon}></img> 
+          
+          
+          )
+
         }
         <img src="" alt="" />
       </div>
@@ -127,57 +146,14 @@ const data = {
         <p className="slogan font-sans mx-6 -my-6 text-green-500 text-xl">Today is a good day to be great!</p>
         <img src={girl} alt="" className="girl" />
       </div>
+      {
+        // console.log(cliked_link, 'clicked link current')
+        // cliked_link === 'Homepage' ? <Landing /> :
+         <HomePage />    
+      }
 
-      <div className="your_activity absolute ">
-        <p className="font-sans text-lg text-blue-900 font-bold mx-10 my-4 ">Your Activity</p>
-        <div className="pie_chart">
-          <PieChart data={pieData} />
-
-        </div>
-
-      </div>
-
-
-      <div className="your_activity_2 absolute ">
-        <p className="font-sans text-lg text-white font-bold mx-10 my-4 ">Your Activity</p>
-        <p className=" last_week font-sans text-base text-white my-4 ">Last Week</p>
-        <div className="doughnut_chart">
-          <LineChart data={lulcChartData} />
-
-        </div>
-
-      </div>
-      <div className="minicharts">
-        <div className="homepage_chart ">
-          <div className="home_chart_title font-sans text-lg text-white font-semibold my-8 mx-12">HomePage</div>
-          <p className="home_score font-sans text-lg text-white font-bold -my-8 mx-40">98%</p>
-
-        </div>
-        <div className="dashboard_chart">
-        <div className="home_chart_title font-sans text-lg text-white font-semibold my-8 mx-12">Dashboard</div>
-            <p className="home_score font-sans text-lg text-white font-bold -my-8 mx-40">75%</p>
-        </div>
-        <div className="report_chart">
-        <div className="home_chart_title font-sans text-lg text-white font-semibold my-8 mx-12">Report</div>
-            <p className="home_score font-sans text-lg text-white font-bold -my-8 mx-40">80%</p>
-        </div>
-        <div className="training_chart">
-        <div className="home_chart_title font-sans text-lg text-white font-semibold my-8 mx-12">Training</div>
-            <p className="home_score font-sans text-lg text-white font-bold -my-8 mx-40">100%</p>
-        </div>
-
-
-        <div className=" minichart_icons cursor-pointer">
-        
-         
-          <img className='homepage_icon' id='home_id' src={homepage} />
-          <img className='homepage_icon' id='dash_id' src={dashboard} />
-          <img className='homepage_icon' id='report_id' src={report} />
-          <img className='homepage_icon' id='training_id' src={training} />
-        
-       
-      </div>
-      </div>
+    
+   
 
       <div className="profile_section bg-green-200">
         <p className='mx-10 my-16 text-2xl font-bold text-blue-900'>My Profile</p>
@@ -229,8 +205,13 @@ const data = {
 
     
   
-</>
+  </>
    
+
+
+   
+   
+
   
   )
 }
