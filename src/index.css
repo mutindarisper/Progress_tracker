@@ -317,6 +317,7 @@ white-space: nowrap;
   gap: 7rem;
   position:absolute;
   top: 10vh;
+  left: 4vw;
 }
 .navbar_card{
   /* position:absolute;
@@ -332,7 +333,7 @@ box-shadow:  9px 9px 18px #666666,
 .complete_rate{
   position: absolute;
   top: 43vh;
-  left: 17vw;
+  left: 20.5vw;
 width: 426px;
 height: 100px;
   background: #111D45;
@@ -341,4 +342,16 @@ border-radius: 20px;
 color:#fff;
 
 
+}
+
+#task_input{
+  position: absolute;
+  left: 56vw;
+  top: 1.5vh;
+    height: 30px;
+    width: 158px;
+    border-radius: 10px;
+    background: #FFFFFF;
+  border: 1px solid #43C079;
+  outline:none;
 }
