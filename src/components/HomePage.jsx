@@ -5,7 +5,7 @@ import { useState } from 'react'
 const HomePage = () => {
     
     const [navbar_tasks_array, setNavbar_tasks] = useState([])
-    // const [inputText, setInputText] = useState('');
+    const [inputText, setInputText] = useState('');
 
 
 const getTaskInput = (e) => {
@@ -14,7 +14,7 @@ const getTaskInput = (e) => {
            const newTask = e.target.value
         //    navbar_tasks.push(e.target.value)
         //    console.log(navbar_tasks, 'nabvar tasks array')
-        // setInputText(''); // Clear the input text
+        setInputText(''); // Clear the input text
            setNavbar_tasks([...navbar_tasks_array, newTask ])
            
         //    new_navbar_tasks.push(navbar_tasks)
@@ -37,7 +37,7 @@ const getTaskInput = (e) => {
           
         </div>
 
-        <input type="text" name="" id="task_input" onKeyDown={getTaskInput}  />
+        <input type="text" name="" id="task_input" onKeyDown={getTaskInput} value={inputText}  onChange={(e) => setInputText(e.target.value)} />
         
         {/* <select name="" id="homepage_selections">
                 <option value="">NavBar</option>
@@ -55,7 +55,7 @@ const getTaskInput = (e) => {
                     navbar_tasks_array.map( (task, index) => 
                         
                         <div className="flex flex-row gap-2 p-3">
-                            <input type="checkbox" name="" id="" value={inputText} />
+                            <input type="checkbox" name="" id=""  />
                              <p key={index}>{task}</p>
                         {/* <label htmlFor="input">{navbar_task}</label> */}
                         
