@@ -20,7 +20,7 @@ const HomePage = () => {
     const [totalBodyTasks, setTotalBodyTasks] = useState()
     
     const [footer_checked_count, setFooter_checked_count] = useState()
-    const [totalFooterTasks, setTotaFooterTasks] = useState()
+    const [totalFooterTasks, setTotalFooterTasks] = useState()
     
     // let navbar_storage = localStorage.getItem("stored_navbar_array")
     
@@ -33,7 +33,7 @@ const HomePage = () => {
         datasets: [
           {
             label: 'Completed',
-            data: [navbar_checked_count, body_checked_count, 10, 20],
+            data: [navbar_checked_count, body_checked_count, footer_checked_count],
             backgroundColor: [
               '#1c844a',
               '#0f1854',
@@ -113,7 +113,7 @@ const getChecked = () => {
             setTotalNavbarTasks(total_nav_tasks)
     
             var percent = ((box_count/total_nav_tasks) * 100).toFixed(2)
-            setBody_checked_count(percent)
+            setNavbar_checked_count(percent)
         }
 
     }
@@ -132,6 +132,23 @@ const getChecked = () => {
     
             var percent = ((box_count/total_body_tasks) * 100).toFixed(2)
             setBody_checked_count(percent)
+        }
+
+    }
+    if(category === 'Footer') {
+        var checkbox = document.getElementById("footer_section_check")
+        if(checkbox.checked == true){
+            // console.log('i am checked')
+            var $boxes = $('input[name=footer_check]:checked');
+            var box_count = $boxes.length;
+    
+            console.log('number checked',box_count)
+            console.log('total number of tasks',footer_tasks_array.length)
+            var total_footer_tasks = footer_tasks_array.length
+            setTotalFooterTasks(total_footer_tasks)
+    
+            var percent = ((box_count/total_footer_tasks) * 100).toFixed(2)
+            setFooter_checked_count(percent)
         }
 
     }
@@ -263,7 +280,7 @@ const getChecked = () => {
                         footer_tasks_array.map( (task, index) => 
                             
                             <div className="flex flex-row gap-2 p-3 -my-6 mx-6">
-                                <input type="checkbox" name="" id=""  />
+                                <input type="checkbox" name="footer_check" id="footer_section_check" onClick={getChecked}  />
                                  <p key={index} className="font-sans text-base text-white font-light">{task}</p>
                             {/* <label htmlFor="input">{navbar_task}</label> */}
                             
