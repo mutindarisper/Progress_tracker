@@ -10,6 +10,7 @@ const HomePage = () => {
     const [inputText, setInputText] = useState('');
     const [category, setCategory] = useState('')
     let category_array = ['NavBar', 'Body Section', 'Footer']
+    let navbar_storage = localStorage.getItem("stored_navbar_array")
 
 
     const taskOptions = category_array.map( selection => (
@@ -28,6 +29,7 @@ const getTaskInput = (e) => {
         setInputText(''); // Clear the input text
         if(category === 'NavBar') {
             setNavbar_tasks([...navbar_tasks_array, newTask ])
+            localStorage.setItem("stored_navbar_array", navbar_tasks_array);
             console.log( 'navbar array',navbar_tasks_array)
         }
         if(category === 'Body Section') {
@@ -103,6 +105,7 @@ const getTaskCategory = (e) => {
                             <div className="flex flex-row gap-2 p-3">
                                 <input type="checkbox" name="" id=""  />
                                  <p key={index} className="font-sans text-base text-white font-light">{task}</p>
+                                 
                             {/* <label htmlFor="input">{navbar_task}</label> */}
                             
     
@@ -112,7 +115,21 @@ const getTaskCategory = (e) => {
                             
     
                         )
-                        : null
+                        :   navbar_tasks_array.map( (task, index) => 
+                            
+                        <div className="flex flex-row gap-2 p-3">
+                            <input type="checkbox" name="" id=""  />
+                             <p key={index} className="font-sans text-base text-white font-light">{task}</p>
+                             
+                        {/* <label htmlFor="input">{navbar_task}</label> */}
+                        
+
+                        </div>
+                       
+                        
+                        
+
+                    )
                     
                 }
                
@@ -138,7 +155,20 @@ const getTaskCategory = (e) => {
                             
     
                         )
-                        : null
+                        : body_tasks_array.map( (task, index) => 
+                            
+                        <div className="flex flex-row gap-2 p-3">
+                            <input type="checkbox" name="" id=""  />
+                             <p key={index} className="font-sans text-base text-white font-light">{task}</p>
+                        {/* <label htmlFor="input">{navbar_task}</label> */}
+                        
+
+                        </div>
+                       
+                        
+                        
+
+                    )
                     
                 }
 
@@ -162,7 +192,20 @@ const getTaskCategory = (e) => {
                             
     
                         )
-                        : null
+                        :  footer_tasks_array.map( (task, index) => 
+                            
+                        <div className="flex flex-row gap-2 p-3">
+                            <input type="checkbox" name="" id=""  />
+                             <p key={index} className="font-sans text-base text-white font-light">{task}</p>
+                        {/* <label htmlFor="input">{navbar_task}</label> */}
+                        
+
+                        </div>
+                       
+                        
+                        
+
+                    )
                     
                 }
 
