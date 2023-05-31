@@ -332,10 +332,10 @@ box-shadow:  9px 9px 18px #666666,
 }
 .complete_rate{
   position: absolute;
-  top: 43vh;
+  top: 41vh;
   left: 20.5vw;
 width: 426px;
-height: 100px;
+height: 130px;
   background: #111D45;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
@@ -358,7 +358,7 @@ color:#fff;
 .home_component_chart{
   display:flex;
   
-  height: 120px;
+  height: 150px;
        /* width: 120px;
        background:red; */
        margin-top: -130px;

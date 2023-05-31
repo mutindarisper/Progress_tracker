@@ -21,6 +21,8 @@ const HomePage = () => {
     
     const [footer_checked_count, setFooter_checked_count] = useState()
     const [totalFooterTasks, setTotalFooterTasks] = useState()
+
+    const [meanScore, setMeanScore] = useState()
     
     // let navbar_storage = localStorage.getItem("stored_navbar_array")
     
@@ -52,6 +54,7 @@ const HomePage = () => {
             borderWidth: 4 ,
           },
         ],
+     
       };
 
     const taskOptions = category_array.map( selection => (
@@ -152,8 +155,24 @@ const getChecked = () => {
         }
 
     }
+
+    function sumArray(numbers) {
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          sum += numbers[i];
+        }
+        return sum;
+      }
+    let mean_array =[navbar_checked_count, body_checked_count,footer_checked_count]
+    let numbers = mean_array.map( (item) => parseInt(item))
+    console.log(numbers, 'mean array')
+    let mean_score = sumArray(numbers)/3
+    console.log(mean_score, 'mean score')
+    setMeanScore(mean_score)
    
 }
+
+
 
 
 
@@ -316,27 +335,12 @@ const getChecked = () => {
                 <p className="font-sans text-base mx-12 my-10 font-bold">Completion rate</p>
                 <div className="home_component_chart">
                 <PieChart data={pieData}/>
+                <p className="font-sans text-base font-bold my-20 -mx-24">{Math.round(meanScore) + '%'}</p>
                 </div>
                 
             </div>
 
 
-
-
-            {/* <div className="-my-20 mx-32">
-      {checkboxes.map((checkbox) => (
-        <div key={checkbox.id}>
-          <input
-            type="checkbox"
-            id={checkbox.id}
-            checked={checkbox.checked}
-            onChange={() => handleCheckboxChange(checkbox.id)}
-          />
-          <label htmlFor={checkbox.id}>{checkbox.label}</label>
-        </div>
-      ))}
-      <p>Number of checked checkboxes: {checkedCount}</p>
-    </div> */}
 
             
 
