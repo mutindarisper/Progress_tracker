@@ -57,7 +57,7 @@ const pieData = {
   labels: ['Homepage', 'Dashboard', 'Progress Report', 'Training'],
   datasets: [
     {
-      label: 'Percent Completed',
+      label: 'Completed',
       data: [100, 75, 80, 100],
       backgroundColor: [
         '#1c844a',

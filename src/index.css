@@ -355,3 +355,12 @@ color:#fff;
   border: 1px solid #43C079;
   outline:none;
 }
+.home_component_chart{
+  display:flex;
+  
+  height: 120px;
+       /* width: 120px;
+       background:red; */
+       margin-top: -130px;
+       margin-left: 250px;
+}
