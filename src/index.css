@@ -276,7 +276,7 @@ border-radius: 20px;
 .header{
   display: flex;
   flex-direction: row;
-  gap: 50rem;
+  gap: 40rem;
   width: 64vw;
   /* background:red; */
  
@@ -290,12 +290,12 @@ border-radius: 20px;
   flex-direction: row;
   gap: 1rem;
   align-items: center;
-  margin-top: 19px;
+  margin-top: 16px;
   
 }
 #homepage_selections{
   position: absolute;
-left: 56vw;
+left: 47vw;
 top: 1.5vh;
   height: 30px;
   width: 150px;

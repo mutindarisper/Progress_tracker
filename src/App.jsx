@@ -148,8 +148,8 @@ const show_homepage_component = () => {
       </div>
       {
         // console.log(cliked_link, 'clicked link current')
-        // cliked_link === 'Homepage' ? <Landing /> :
-         <HomePage />    
+        cliked_link === 'Homepage' ?  <HomePage />  : <Landing /> 
+           
       }
 
     
