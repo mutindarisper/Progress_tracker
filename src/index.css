@@ -338,6 +338,14 @@ white-space: nowrap;
   left: 8vw;
 }
 
+.trainings_cards{
+  display: flex;
+  flex-direction: row;
+  gap: 20rem;
+  position:absolute;
+  top: 10vh;
+  left: 8vw;
+}
 .navbar_card{
   /* position:absolute;
   top: 10vh; */
@@ -372,6 +380,34 @@ border-radius: 50px;
 background: #3CBE74;
 box-shadow:  9px 9px 18px #666666,
              -9px -9px 18px #ffffff;
+}
+
+.training_card{
+  /* position:absolute;
+  top: 10vh; */
+  width: 350px;
+height: 350px;
+
+border-radius: 50px;
+background: #3CBE74;
+box-shadow:  9px 9px 18px #666666,
+             -9px -9px 18px #ffffff;
+}
+
+.training_complete_rate{
+  /* position: absolute;
+  top: 41vh;
+  left: 20.5vw; */
+  margin-top: 220px;
+  margin-left: -50px;
+width: 426px;
+height: 130px;
+  background: #111D45;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+color:#fff;
+
+
 }
 .complete_rate{
   position: absolute;
