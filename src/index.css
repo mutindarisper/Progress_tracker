@@ -319,11 +319,32 @@ white-space: nowrap;
   top: 10vh;
   left: 4vw;
 }
+
+.dashboard_cards{
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  position:absolute;
+  top: 10vh;
+  left: 1vw;
+}
 .navbar_card{
   /* position:absolute;
   top: 10vh; */
   width: 280px;
 height: 280px;
+
+border-radius: 50px;
+background: #3CBE74;
+box-shadow:  9px 9px 18px #666666,
+             -9px -9px 18px #ffffff;
+}
+
+.dashboard_card{
+  /* position:absolute;
+  top: 10vh; */
+  width: 250px;
+height: 250px;
 
 border-radius: 50px;
 background: #3CBE74;

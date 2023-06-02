@@ -14,6 +14,7 @@ import profile from "./assets/risper.png"
 import LineChart from "./components/charts/LineChart"
 import PieChart from './components/charts/PieChart'
 import Landing from './components/Landing'
+import Dashboard from './components/Dashboard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -148,7 +149,7 @@ const show_homepage_component = () => {
       </div>
       {
         // console.log(cliked_link, 'clicked link current')
-        cliked_link === 'Homepage' ?  <HomePage />  : <Landing /> 
+        cliked_link === 'Homepage' ?  <HomePage />  :  cliked_link === 'Dashboard' ?  <Dashboard /> : <Landing /> 
            
       }
 
