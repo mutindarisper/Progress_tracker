@@ -406,7 +406,7 @@ const getChecked = () => {
                 <p className="font-sans text-base mx-12 my-10 font-bold">Completion rate</p>
                 <div className="home_component_chart">
                 <PieChart data={pieData}/>
-                <p className="font-sans text-base font-bold my-20 -mx-24">{Math.round(meanScore) + '%'}</p>
+                <p className="font-sans text-base font-bold my-20 -mx-24">{meanScore ? Math.round(meanScore) + '%' : 0 + '%'}</p>
                 </div>
                 
             </div>
