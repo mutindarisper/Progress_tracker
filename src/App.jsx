@@ -10,6 +10,7 @@ import dashboard from "./assets/dashboard.svg"
 import homepage from "./assets/homepage.svg"
 import report from "./assets/report.svg"
 import training from "./assets/training.svg"
+import landing from "./assets/landing.svg"
 import profile from "./assets/risper.png"
 // import viteLogo from '/vite.svg'
 // import './App.css'
@@ -38,7 +39,7 @@ var today_date = date.getDate()
 let month = date.getMonth();
 let year = date.getFullYear();
 let links = ['Landing', 'Homepage', 'Dashboard', 'Reports', 'Trainings']
-let link_icons = [homepage, dashboard, report, training]
+let link_icons = [landing, homepage, dashboard, report, training]
 let task_titles = ['Add banner images', 'Add map functionalities', 'Implement Signup page' ]
 let meter_values = [9, 65, 90]
 

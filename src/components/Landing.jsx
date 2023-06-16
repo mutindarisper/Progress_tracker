@@ -9,8 +9,9 @@ import dashboard from "../assets/dashboard.svg"
 import homepage from "../assets/homepage.svg"
 import report from "../assets/report.svg"
 import training from "../assets/training.svg"
+import landing from "../assets/landing.svg"
 const Landing = () => {
-    let link_icons = [homepage, dashboard, report, training]
+    let link_icons = [landing, homepage, dashboard, report, training]
 
 
     const scoreselections = useSelector(selectAllScores)
@@ -37,7 +38,7 @@ const Landing = () => {
         datasets: [
           {
             label: 'Completed',
-            data: [100, 75, 80, 100],
+            data: [scoreSlice.homepageMeanScore, 75, 80, 100],
             backgroundColor: [
               '#1c844a',
               '#0f1854',
