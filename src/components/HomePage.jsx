@@ -1,11 +1,15 @@
 import React from 'react'
 
 import { useState } from 'react'
+import {  useDispatch, useSelector } from 'react-redux';
 import plus from '../assets/plus.svg'
 import PieChart from './charts/PieChart'
 import $ from "jquery";
+import { selectAllScores } from './scores/scoreSlice';
+import { changehomepageMeanScore } from './scores/scoreSlice';
 
 const HomePage = () => {
+    const dispatch = useDispatch()
     
     const [navbar_tasks_array, setNavbar_tasks] = useState([])
     const [body_tasks_array, setBody_tasks] = useState([])
@@ -26,7 +30,8 @@ const HomePage = () => {
     
     // let navbar_storage = localStorage.getItem("stored_navbar_array")
     
-
+    const scoreselections = useSelector(selectAllScores)
+    const scoreSlice = useSelector((state => state.scoreselections)) //return the entire wetland slice
 
 
 
@@ -169,6 +174,9 @@ const getChecked = () => {
     let mean_score = sumArray(numbers)/3
     console.log(mean_score, 'mean score')
     setMeanScore(mean_score)
+
+    //change the value of meanscore in store
+    dispatch(changehomepageMeanScore(mean_score))
    
 }
 
@@ -335,7 +343,7 @@ const getChecked = () => {
                 <p className="font-sans text-base mx-12 my-10 font-bold">Completion rate</p>
                 <div className="home_component_chart">
                 <PieChart data={pieData}/>
-                <p className="font-sans text-base font-bold my-20 -mx-24">{meanScore ? Math.round(meanScore) + '%' : 0 + '%'}</p>
+                <p className="font-sans text-base font-bold my-20 -mx-24">{scoreSlice.homepageMeanScore ? Math.round(scoreSlice.homepageMeanScore) + '%' : 0 + '%'}</p>
                 </div>
                 
             </div>

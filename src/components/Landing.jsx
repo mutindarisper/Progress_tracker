@@ -1,4 +1,7 @@
 import React from 'react'
+import {  useDispatch, useSelector } from 'react-redux';
+import { selectAllScores } from './scores/scoreSlice';
+
 import PieChart from './charts/PieChart'
 import LineChart from './charts/LineChart'
 
@@ -8,6 +11,10 @@ import report from "../assets/report.svg"
 import training from "../assets/training.svg"
 const Landing = () => {
     let link_icons = [homepage, dashboard, report, training]
+
+
+    const scoreselections = useSelector(selectAllScores)
+    const scoreSlice = useSelector((state => state.scoreselections)) //return the entire wetland slice
 
 
     let lulcChartData = {
@@ -75,7 +82,7 @@ const Landing = () => {
       <div className="minicharts">
         <div className="homepage_chart ">
           <div className="home_chart_title font-sans text-lg text-white font-semibold my-8 mx-12">HomePage</div>
-          <p className="home_score font-sans text-lg text-white font-bold -my-8 mx-40">98%</p>
+          <p className="home_score font-sans text-lg text-white font-bold -my-8 mx-40">{scoreSlice.homepageMeanScore ? Math.round(scoreSlice.homepageMeanScore) + '%' : 0 + '%'}</p>
 
         </div>
         <div className="dashboard_chart">

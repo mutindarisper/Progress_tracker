@@ -1,5 +1,7 @@
 import { useState, useRef  } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import {  useDispatch, useSelector } from 'react-redux';
+import { selectAllScores } from './components/scores/scoreSlice';
 import HomePage from './components/HomePage'
 import Logo from './assets/Grouplogo_avant.svg'
 import search from './assets/search.svg'
@@ -22,7 +24,9 @@ function App() {
   const [count, setCount] = useState(0)
   const [barchartData, setBarchartData] = useState({})
 
-
+ 
+  const scoreselections = useSelector(selectAllScores)
+  const scoreSlice = useSelector((state => state.scoreselections)) //return the entire wetland slice
 
   const date = new Date();
   var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
@@ -33,7 +37,7 @@ let day = date.getDay();
 var today_date = date.getDate()
 let month = date.getMonth();
 let year = date.getFullYear();
-let links = ['Homepage', 'Dashboard', 'Reports', 'Trainings']
+let links = ['Landing', 'Homepage', 'Dashboard', 'Reports', 'Trainings']
 let link_icons = [homepage, dashboard, report, training]
 let task_titles = ['Add banner images', 'Add map functionalities', 'Implement Signup page' ]
 let meter_values = [9, 65, 90]
@@ -113,7 +117,9 @@ const show_homepage_component = () => {
   <>
     <div className="sidenav ">
    
-      <img className='logo -mx-1 my-10' src={Logo} alt="" />
+      <img className='logo -mx-1 my-10' src={Logo} alt="" 
+        
+       />
       <div className="links flex flex-col gap-20	text-white p-12 cursor-pointer">
         {links.map((link) => (
           
@@ -152,7 +158,9 @@ const show_homepage_component = () => {
       {
         // console.log(cliked_link, 'clicked link current')
         cliked_link === 'Homepage' ?  <HomePage />  :  cliked_link === 'Dashboard' ?  <Dashboard /> 
-        : cliked_link === 'Reports' ?  <Reports /> : cliked_link === 'Trainings' ?  <Trainings /> : <Landing /> 
+        : cliked_link === 'Reports' ?  <Reports /> : cliked_link === 'Trainings' ?  <Trainings />
+         :  cliked_link === 'Landing' ? <Landing /> 
+         : <Landing />
            
       }
 
